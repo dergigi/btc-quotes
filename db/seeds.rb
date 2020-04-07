@@ -14,5 +14,7 @@ ws = session.spreadsheet_by_title("Bitcoin Resources").worksheets[1]
 
 # ws.num_rows
 (2..5).each do |row| # skip first row (heading)
-  Quote.create(author: ws[row, 1], body: ws[row, 3], source: ws[row, 4], date: Date.parse(ws[row, 5]), audio: ws[row, 6])
+  author = Author.create(name: ws[row, 1], twitter: ws[row, 2])
+  quote = Quote.create(body: ws[row, 3], source: ws[row, 4], date: Date.parse(ws[row, 5]), audio: ws[row, 6], author_id: author.id)
+  p quote
 end
