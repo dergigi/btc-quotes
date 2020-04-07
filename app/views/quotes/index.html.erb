@@ -17,7 +17,7 @@
   <tbody>
     <% @quotes.each do |quote| %>
       <tr>
-        <td><%= quote.author %></td>
+        <td><a href="<%= quote.author.twitter %>"><%= quote.author.name %></a></td>
         <td><%= quote.body %></td>
         <td><%= quote.source %></td>
         <td><%= quote.date %></td>
