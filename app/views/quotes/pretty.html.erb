@@ -1,4 +1,11 @@
-<blockquote cite="<%= @quote.source %>">
-    <%= @quote.body %>
-    <cite><a href="<%= @quote.source %>"><%= @quote.author.name %></a></cite>
-</blockquote>
+<section class="main">
+  <div class="mb-wrap mb-style-2">
+    <blockquote cite="<%= @quote.source %>">
+      <p><%= @quote.body %></p>
+    </blockquote>
+  </div>
+  <div class="mb-attribution">
+    <p class="mb-author">
+      <a href="<%= @quote.source %>"><%= @quote.author.name %></a>
+    </p>
+  </div>
