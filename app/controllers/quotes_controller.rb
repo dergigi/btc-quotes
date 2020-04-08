@@ -7,6 +7,12 @@ class QuotesController < ApplicationController
     @quotes = Quote.all
   end
 
+  def random
+    @quote = Quote.find(Quote.ids.shuffle.first)
+    # redirect_to quote_path(@quote)
+    render :show, location: @quote
+  end
+
   # GET /quotes/1
   # GET /quotes/1.json
   def show
