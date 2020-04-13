@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_04_07_143917) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "authors", force: :cascade do |t|
     t.string "name"
     t.string "twitter"
@@ -25,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_04_07_143917) do
     t.string "paywall_link"
     t.date "date"
     t.boolean "audio"
-    t.integer "author_id"
+    t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_id"], name: "index_quotes_on_author_id"
