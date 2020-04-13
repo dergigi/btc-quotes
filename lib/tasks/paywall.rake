@@ -1,6 +1,6 @@
 namespace :paywall do
   desc "Create a paywall.link paywall"
-  task :create => :environment do
+  task create: :environment do
     require "uri"
     require "net/http"
 
@@ -17,10 +17,18 @@ namespace :paywall do
     Quote.all.each do |q|
       source = q.source
       puts source
+
+      memo = "Pay 2¢ to "
+      memo += "listen to the original recording of this quote " if q.audio?
+      memo += "see the source document of this quote " unless q.audio?
+      memo += "by " + q.author.name
+
+      puts memo
     end
     request.body = "{\n  \"destination_url\": \"https://www.dergigi.com\",\n  \"memo\": \"Paying this redirects to dergigi.com too\",\n  \"num_satoshis\": 13\n}"
 
     # response = https.request(request)
     # puts response.read_body
   end
+
 end
