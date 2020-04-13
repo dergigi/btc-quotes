@@ -9,7 +9,7 @@
 require "google_drive"
 require "date"
 
-session = GoogleDrive::Session.from_service_account_key("client_secret.json")
+session = GoogleDrive::Session.from_service_account_key("google-credentials.json")
 ws = session.spreadsheet_by_title("Bitcoin Resources").worksheets[1]
 
 (2..ws.num_rows).each do |row| # skip first row (heading)
