@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_04_07_143917) do
   create_table "quotes", force: :cascade do |t|
     t.text "body"
     t.string "source"
+    t.string "paywall_link"
     t.date "date"
     t.boolean "audio"
     t.integer "author_id"

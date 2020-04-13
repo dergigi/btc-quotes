@@ -3,6 +3,7 @@ class CreateQuotes < ActiveRecord::Migration[6.0]
     create_table :quotes do |t|
       t.text :body
       t.string :source
+      t.string :paywall_link
       t.date :date
       t.boolean :audio
 
