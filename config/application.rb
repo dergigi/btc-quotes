@@ -17,3 +17,11 @@ module Quotes
     # the framework and any gems in your application.
   end
 end
+
+VersionCake.setup do |config|
+  config.resources do |r|
+    r.resource %r{.*}, [], [], (1)
+  end
+  config.extraction_strategy = :path_parameter
+  config.missing_version = 1
+end
