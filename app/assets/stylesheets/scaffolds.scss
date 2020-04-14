@@ -1,8 +1,8 @@
 @import "colors.scss";
 
-section,
 body,
-html {
+html,
+section {
   height: 100%;
   margin: 0;
 }
@@ -14,9 +14,11 @@ footer {
   margin-top: auto;
   text-align: center;
 
-  a, a:visited {
+  a,
+  a:visited {
     color: $blue;
   }
+
   a:hover {
     color: $gi-blue;
   }
