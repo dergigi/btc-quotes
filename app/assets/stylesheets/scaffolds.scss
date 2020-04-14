@@ -1,8 +1,7 @@
 @import "colors.scss";
 
 body,
-html,
-section {
+html {
   height: 100%;
   margin: 0;
 }
@@ -24,8 +23,7 @@ footer {
   }
 }
 
-body,
-section {
+body {
   background-color: $dark-gray;
   color: white;
   display: flex;

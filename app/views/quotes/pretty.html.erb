@@ -1,11 +1,10 @@
-<section class="main">
-  <div class="mb-wrap mb-style-2">
-    <blockquote cite="<%= @quote.source %>">
-      <p><%= @quote.body %></p>
-    </blockquote>
-  </div>
-  <div class="mb-wrap mb-attribution">
-    <p class="mb-author">
-      <a href="<%= @quote.paywall_link %>" target="_blank"><%= @quote.author.name %></a>
-    </p>
-  </div>
+<div class="mb-wrap mb-style-2">
+  <blockquote cite="<%= @quote.source %>" onClick="window.location.reload();">
+    <p><%= @quote.body %></p>
+  </blockquote>
+</div>
+<div class="mb-wrap mb-attribution">
+  <p class="mb-author">
+    <a href="<%= @quote.paywall_link %>" target="_blank"><%= @quote.author.name %></a>
+  </p>
+</div>
