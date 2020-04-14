@@ -1,52 +1,91 @@
 @import "colors.scss";
 
-body {
+section,
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+footer {
+  color: $light-gray;
+  background-color: $gray;
+  border-top: 1px dotted $btc-orange-brighter;
+  margin-top: auto;
+  text-align: center;
+
+  a, a:visited {
+    color: $blue;
+  }
+  a:hover {
+    color: $gi-blue;
+  }
+}
+
+body,
+section {
   background-color: $dark-gray;
   color: white;
-  margin: 33px; }
+  display: flex;
+  flex-direction: column;
+}
 
-body, p, ol, ul, td {
+body,
+ol,
+p,
+td,
+ul {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px; }
+  line-height: 18px;
+}
 
 pre {
   background-color: #eee;
   padding: 10px;
-  font-size: 11px; }
+  font-size: 11px;
+}
 
-a, a:visited {
-  color: $btc-orange; }
+a,
+a:visited {
+  color: $btc-orange;
+}
 
 a:hover {
   color: $btc-orange-brighter;
   text-decoration: underline;
-  }
+}
 
 th {
-  padding-bottom: 5px; }
+  padding-bottom: 5px;
+}
 
 td {
-  padding: 0 5px 7px; }
+  padding: 0 5px 7px;
+}
 
-div.field,
-div.actions {
-  margin-bottom: 10px; }
+div.actions,
+div.field {
+  margin-bottom: 10px;
+}
 
 #notice {
-  color: green; }
+  color: green;
+}
 
 .field_with_errors {
   padding: 2px;
   background-color: red;
-  display: table; }
+  display: table;
+}
 
 #error_explanation {
   width: 450px;
   border: 2px solid red;
   padding: 7px 7px 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0; }
+  background-color: #f0f0f0;
+}
 
 #error_explanation h2 {
   text-align: left;
@@ -55,11 +94,14 @@ div.actions {
   font-size: 12px;
   margin: -7px -7px 0;
   background-color: #c00;
-  color: #fff; }
+  color: #fff;
+}
 
 #error_explanation ul li {
   font-size: 12px;
-  list-style: square; }
+  list-style: square;
+}
 
 label {
-  display: block; }
+  display: block;
+}
