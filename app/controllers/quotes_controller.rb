@@ -9,8 +9,11 @@ class QuotesController < ApplicationController
 
   def random
     @quote = Quote.find(Quote.ids.shuffle.first)
-    
-    render :pretty, location: @quote
+
+    respond_to do |format|
+      format.html { render :pretty }
+      format.json { render :show, status: :ok, location: @quote }
+    end
   end
 
   # GET /quotes/1
