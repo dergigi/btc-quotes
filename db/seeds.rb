@@ -14,6 +14,11 @@ ws = session.spreadsheet_by_title("Bitcoin Resources").worksheets[1]
 
 (2..ws.num_rows).each do |row| # skip first row (heading)
   author = Author.where(:name => ws[row, 1], :twitter => ws[row, 2]).first_or_create
-  quote = Quote.create(body: ws[row, 3], source: ws[row, 4], date: Date.parse(ws[row, 5]), audio: ws[row, 6], author_id: author.id)
+  quote = Quote.where(:source => ws[row, 4]).first_or_create
+  quote.body = ws[row, 3]
+  quote.date = Date.parse(ws[row, 5])
+  quote.audio = ws[row, 6]
+  quote.author_id = author.id
+  quote.save!
   p quote
 end
