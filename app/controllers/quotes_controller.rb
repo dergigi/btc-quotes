@@ -9,7 +9,7 @@ class QuotesController < ApplicationController
 
   def random
     @quote = Quote.find(Quote.ids.shuffle.first)
-    # redirect_to quote_path(@quote)
+    
     render :pretty, location: @quote
   end
 
