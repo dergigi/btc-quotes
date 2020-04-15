@@ -1,4 +1,6 @@
 class QuotesController < ApplicationController
+  include HttpAuthConcern
+  
   before_action :set_quote, only: [:show]
 
   # GET /quotes
