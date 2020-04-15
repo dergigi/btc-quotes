@@ -1,4 +1,5 @@
 class AuthorsController < ApplicationController
+  include HttpAuthConcern
 
   # GET /authors
   # GET /authors.json
