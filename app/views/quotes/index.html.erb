@@ -7,7 +7,7 @@
     <% @quotes.each do |quote| %>
       <tr>
         <td><%= quote.date %></td>
-        <td><a href="<%= quote.author.twitter %>"><%= quote.author.name %></a></td>
+        <td><a href="<%= quote.author.twitter %>" title="<%= quote.id %>"><%= quote.author.name %></a></td>
         <td><%= quote.body %></td>
         <td><%= quote.paywall_link %></td>
       </tr>
