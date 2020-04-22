@@ -21,5 +21,4 @@ ws = session.spreadsheet_by_title("Bitcoin Resources").worksheets[1]
   quote.author_id = author.id
   quote.save!
   p quote
-  quote.create_paywall
 end
