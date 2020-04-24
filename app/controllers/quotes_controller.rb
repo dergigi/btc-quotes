@@ -1,12 +1,17 @@
 class QuotesController < ApplicationController
   include HttpAuthConcern
-  
+
   before_action :set_quote, only: [:show]
 
   # GET /quotes
   # GET /quotes.json
   def index
     @quotes = Quote.all
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render :index, status: :ok }
+    end
   end
 
   def random
