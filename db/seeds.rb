@@ -10,7 +10,7 @@ require "google_drive"
 require "date"
 
 session = GoogleDrive::Session.from_service_account_key("google-credentials.json")
-ws = session.spreadsheet_by_title("Bitcoin Resources").worksheets[1]
+ws = session.spreadsheet_by_title("Bitcoin Quotes").worksheets[0]
 
 (2..ws.num_rows).each do |row| # skip first row (heading)
   author = Author.where(:name => ws[row, 1], :twitter => ws[row, 2]).first_or_create
