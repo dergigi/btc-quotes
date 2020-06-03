@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'quotes#random'
   resources :authors, only: [:index]
-  resources :quotes, only: [:index, :show] do
+  resources :quotes do
     collection do
       get 'random'
     end
