@@ -17,6 +17,15 @@ Prerequisites:
 
 After that, simply run `rails s` to serve the site locally.
 
+### Update
+
+Two scripts are of interest for updating the DB: `db:seed` and `paywall:create`. If the site is running on Heroku, for example, the following will do:
+
+```
+heroku run bundle exec rake db:seed && heroku run bundle exec rake paywall:create
+```
+
+
 ### Support
 
 You can follow [the bot](https://twitter.com/btc_quotes) on Twitter, share the project, [submit](https://forms.gle/himv1V62J8ArHPkJ8) a quote, or [support me](https://dergigi.com/support/) directly.
