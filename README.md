@@ -32,6 +32,6 @@ You can follow [the bot](https://twitter.com/btc_quotes) on Twitter, share the p
 
 ---
 
-Created with :heart: by [Gigi](https://dergigi.com/).
+Created with 🧡 by [Gigi](https://dergigi.com/).
 
 [![tippin.me](https://badgen.net/badge/%E2%9A%A1%EF%B8%8Ftippin.me/@dergigi/F0918E)](https://tippin.me/@dergigi)
