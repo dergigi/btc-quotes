@@ -36,3 +36,6 @@ yarn-debug.log*
 .yarn-integrity
 google-credentials.json
 .env
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
