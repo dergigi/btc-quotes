@@ -75,6 +75,8 @@ GEM
       xpath (~> 3.2)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    cssbundling-rails (1.1.1)
+      railties (>= 6.0.0)
     declarative (0.0.20)
     erubi (1.11.0)
     faraday (1.10.2)
@@ -235,16 +237,6 @@ GEM
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     selenium-webdriver (4.7.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -268,7 +260,6 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.2.1)
     thread_safe (0.3.6)
-    tilt (2.0.11)
     timeout (0.3.1)
     trailblazer-option (0.1.2)
     turbolinks (5.2.1)
@@ -308,6 +299,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  cssbundling-rails (~> 1.1)
   google_drive
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
@@ -316,7 +308,6 @@ DEPENDENCIES
   puma (~> 4.3)
   rails (~> 6.0.2, >= 6.0.2.2)
   rubocop
-  sass-rails (>= 6)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
