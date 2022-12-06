@@ -1,7 +1,7 @@
 // Place all the styles related to the Quotes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-@import "colors.scss";
+@import "colors.sass.scss";
 
 .main {
   position: relative;
@@ -35,7 +35,7 @@
 }
 
 .mb-style-2 blockquote:after {
-  background: url("<%= asset_path('bitcoin.png') %>") repeat scroll 0 0 rgba(247, 147, 26, 1);
+  background: url("bitcoin.png") repeat scroll 0 0 rgba(247, 147, 26, 1);
   border-radius: 50% 50% 50% 50%;
   color: rgba(255, 255, 255, 0.5);
   content: " ";
