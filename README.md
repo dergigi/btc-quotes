@@ -28,7 +28,7 @@ heroku run bundle exec rake db:seed && heroku run bundle exec rake paywall:creat
 
 ### Support
 
-You can follow the bot on [Twitter](https://twitter.com/btc_quotes) and [nostr](https://www.nostr.guru/p/npub1satst5p5jcacfpagy3jxscf2s48d9dd0v6lfxms7frp9e6t2w5xstmsfjp), share the project, [submit](https://forms.gle/himv1V62J8ArHPkJ8) a quote, or [support me](https://dergigi.com/support/) directly.
+You can follow the bot on [Twitter](https://twitter.com/btc_quotes) and [nostr](https://nosta.me/npub1satst5p5jcacfpagy3jxscf2s48d9dd0v6lfxms7frp9e6t2w5xstmsfjp), share the project, [submit](https://forms.gle/himv1V62J8ArHPkJ8) a quote, or [support me](https://dergigi.com/support/) directly.
 
 ---
 
