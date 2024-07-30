@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.0.0'
+gem 'rails', '~> 7.0.8'
 # Added with update to Rails 7.0, since sprockets is now optional (not sure if needed?)
 gem 'sprockets-rails'
 # Use sqlite3 as the database for Active Record
