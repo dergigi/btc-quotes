@@ -6,9 +6,6 @@ class QuotesAuthorizationTest < ActionDispatch::IntegrationTest
     ENV['HTTP_AUTH_USERNAME'] = 'security-test-user'
     ENV['HTTP_AUTH_PASSWORD'] = 'security-test-password'
 
-    # Legacy quote fixtures reference a nonexistent author. Repair only the
-    # transactional test data so the public JSON response has a valid author.
-    Quote.update_all(author_id: authors(:one).id)
     @quote = quotes(:one)
   end
 
@@ -73,6 +70,32 @@ class QuotesAuthorizationTest < ActionDispatch::IntegrationTest
     patch quote_url(@quote), params: { quote: { body: 'Authorized update' } }, headers: headers, as: :json
     assert_response :success
     assert_equal 'Authorized update', @quote.reload.body
+  end
+
+  test 'missing configured password rejects a username-only Basic header' do
+    ENV.delete('HTTP_AUTH_PASSWORD')
+    headers = { 'Authorization' => "Basic #{Base64.strict_encode64(ENV.fetch('HTTP_AUTH_USERNAME'))}" }
+    assert_quotes_unchanged do
+      patch quote_url(@quote), params: { quote: { body: 'Unauthorized update' } }, headers: headers, as: :json
+    end
+    assert_response :unauthorized
+  end
+
+  test 'missing or blank configured credentials fail closed' do
+    %w[HTTP_AUTH_USERNAME HTTP_AUTH_PASSWORD].each do |key|
+      original = ENV.fetch(key)
+      [nil, '', ' '].each do |value|
+        ENV[key] = value
+        headers = { 'Authorization' => ActionController::HttpAuthentication::Basic.encode_credentials(
+          ENV.fetch('HTTP_AUTH_USERNAME', ''), ENV.fetch('HTTP_AUTH_PASSWORD', '')
+        ) }
+        assert_quotes_unchanged do
+          delete quote_url(@quote), headers: headers, as: :json
+        end
+        assert_response :unauthorized
+      end
+      ENV[key] = original
+    end
   end
 
   private
