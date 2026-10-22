@@ -1,16 +1,16 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.3'
+ruby '3.4.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.0.0'
+gem 'rails', '~> 8.1.4'
 # Added with update to Rails 7.0, since sprockets is now optional (not sure if needed?)
 gem 'sprockets-rails'
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 1.2'
 # Use Puma as the app server
-gem 'puma', '~> 4.3'
+gem 'puma', '~> 7.2', '>= 7.2.1'
 # Use SCSS for stylesheets
 gem "cssbundling-rails", "~> 1.1"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-gem 'psych', '< 4'
+gem 'psych', '>= 5.2'
 
 gem 'rubocop'
 
